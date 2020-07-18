@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+
+	<div class="questionList">
+		<h4>1. There are two arrays with individual values, write a JavaScript program to compute the sum of each individual index value from the given arrays.<br /> 
+			Sample array :<br />
+			array1 = [1,0,2,3,4];<br />
+			array2 = [3,5,6,7,8,13];<br />
+		</h4>
+		<div class="answer">
+			<div id="question1"></div>
+			<script type="text/javascript">
+				const array1 = {a: '1', b: '0', c: '2', d: '3', e: '4'};
+				const array2 = {a: '3', b: '5', c: '6', d: '7', f: '8', g: '13'};
+
+				document.getElementById("question1").innerHTML = [array1.e, array2.a, array2.f, array2.g];
+			</script>
+		</div>
+	</div>
+	
+	<div class="questionList">
+		<h4>2. Write a JavaScript program to get the width and height of the window (any time the window is resized).</h4>
+		<div class="answer">
+			<div id="question2"></div>
+			<script type="text/javascript">
+				var w = window.innerWidth;
+				var h = window.innerHeight;
+				document.getElementById("question2").innerHTML = "Width: " + w + "<br>Height: " + h;
+			</script>
+		</div>
+	</div>
+	
+	<div class="questionList">
+		<h4>3. Write a JavaScript program to display the reading status (i.e. display book name, author name and reading status) of the following books.</h4>
+		<div class="answer">
+			<div id="question3"></div>
+			<script type="text/javascript">
+				var library = [{
+					   author: 'Bill Gates',
+					   title: 'The Road Ahead',
+					   readingStatus: true
+				   },
+				   {
+					   author: 'Steve Jobs',
+					   title: 'Walter Isaacson',
+					   readingStatus: true
+				   },
+				   {
+					   author: 'Suzanne Collins',
+					   title:  'Mockingjay: The Final Book of The Hunger Games', 
+					   readingStatus: false
+				}];
+
+				var html = "<table border='1' width='50%' cellspacing='0' cellpaddding='0'>";
+					for (var i = 0; i < library.length; i++) {
+						html+="<tr>";
+						html+="<td>"+library[i].title+"</td>";
+						html+="<td>"+library[i].author+"</td>";
+						html+="<td>"+library[i].readingStatus+"</td>";
+
+						html+="</tr>";
+
+					}
+					html+="</table>";
+					document.getElementById("question3").innerHTML = html;
+			</script>
+		</div>
+	</div>
+	
+	<div class="questionList">
+		<h4>4. Write a JavaScript function to split a string and convert it into an array of words.</h4>
+		<div id="question4"></div>
+		<div class="answer">
+			<script type="text/javascript">
+				string_to_array = function (str) {
+					 return str.trim().split(" ");
+				};
+				document.getElementById("question4").innerHTML = (string_to_array("Robin Singh"));
+			</script>
+		</div>
+	</div>
+	
+	<div class="questionList">
+		<h4>7. Write a JavaScript function that reverse a number of 32243.</h4>
+		<div id="question7"></div>
+		<div class="answer">
+			<script type="text/javascript">
+				function reverse_a_number(n)
+				{
+					n = n + "";
+					return n.split("").reverse().join("");
+				}
+				document.getElementById("question7").innerHTML = (reverse_a_number(32243));
+			</script>
+		</div>
+	</div>
+	
+	<div class="questionList">
+		<h4>8. Write a JavaScript function that accepts a string as a parameter and find the longest word within the string.</h4>
+		<div id="question8"></div>
+		<div class="answer">
+			<script type="text/javascript">
+				function find_longest_word(str)
+				{
+				  var text = str.match(/\w[a-z]{0,}/gi);
+				  var result = text[0];
+
+				  for(var x = 1 ; x < text.length; x++)
+				  {
+					if(result.length < text[x].length)
+					{
+					result = text[x];
+					} 
+				  }
+				  return result;
+				}
+				document.getElementById("question8").innerHTML = (find_longest_word('Web Development Tutorial'));
+			</script>
+		</div>
+	</div>
+	
+
+	
+	
+	
+	
+	
+	<style type="text/css">
+		.questionList {
+			border-bottom: 1px solid #ccc;
+			padding: 0 0 20px 0;
+		}
+		.questionList h4 {
+			color: #7d7dd8;
+		}
+	</style>
+  
+</body>
+
+</html>
