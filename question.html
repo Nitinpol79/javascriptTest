@@ -14,10 +14,29 @@
 		<div class="answer">
 			<div id="question1"></div>
 			<script type="text/javascript">
-				const array1 = {a: '1', b: '0', c: '2', d: '3', e: '4'};
-				const array2 = {a: '3', b: '5', c: '6', d: '7', f: '8', g: '13'};
+				var array1 = {a: '1', b: '0', c: '2', d: '3', e: '4'};
+				var array2 = {a: '3', b: '5', c: '6', d: '7', f: '8', g: '13'};
 
 				document.getElementById("question1").innerHTML = [array1.e, array2.a, array2.f, array2.g];
+			</script>
+			
+			<script>
+				const arrayNew1 = [1,0,2,3,4];
+				const arrayNew2 = [3,5,6,7,8,13];
+
+				const checkNan = (item) => isNaN(item) ? 0 : item
+
+				const sum = (indexNew1, indexNew2) => checkNaN(indexNew1) + checkNan(indexNew2)
+
+				const computeTotal = (arrNew1, arrNew2) => {
+					const len = (arrNew1.length >= arrNew2.length) ? arrNew1.length : arrNew2.length
+					let result = []
+					for (let i = 0; i < len; i++){
+						result.push(sum(arr1[i], arrNew2[i]))
+					}
+					return result;
+				}
+				console.log('Result will be: ${computeTotal(arrayNew1, arrayNew2)}')
 			</script>
 		</div>
 	</div>
@@ -76,10 +95,10 @@
 		<div id="question4"></div>
 		<div class="answer">
 			<script type="text/javascript">
-				string_to_array = function (str) {
-					 return str.trim().split(" ");
+				result = function (str) {
+					 return str.trim().split("");
 				};
-				document.getElementById("question4").innerHTML = (string_to_array("Robin Singh"));
+				document.getElementById("question4").innerHTML = (result("Robin Singh"));
 			</script>
 		</div>
 	</div>
